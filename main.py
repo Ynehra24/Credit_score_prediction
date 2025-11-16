@@ -1,8 +1,18 @@
 import streamlit as st
 import joblib
 import numpy as np
+import os
+import gdown
 
-# Load model and scaler
+def download_file_from_gdrive(file_id, filename):
+    url = f"https://drive.google.com/uc?export=download&id={file_id}"
+    if not os.path.exists(filename):
+        gdown.download(url, filename, quiet=False)
+
+# Download both files BEFORE loading them
+download_file_from_gdrive("1osTZxPqU5H204yKq1EHvCvw1DWM2Ejqy", "catboost_model_best.pkl")
+
+# Now load the files
 model = joblib.load("catboost_model_best.pkl")
 scaler = joblib.load("scaler.pkl")
 
