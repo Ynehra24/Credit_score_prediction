@@ -3,3 +3,5 @@ joblib
 numpy
 scikit-learn
 catboost
+os
+gdown
