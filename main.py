@@ -11,6 +11,7 @@ def download_file_from_gdrive(file_id, filename):
 
 # Download both files BEFORE loading them
 download_file_from_gdrive("1osTZxPqU5H204yKq1EHvCvw1DWM2Ejqy", "catboost_model_best.pkl")
+download_file_from_gdrive("1kXZG8OtnqBdsaQ3UHBZcMDJ5GT1NoaQH", "scaler.pkl")
 
 # Now load the files
 model = joblib.load("catboost_model_best.pkl")
